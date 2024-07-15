@@ -11,6 +11,8 @@ npm run dev
 cd backend
 npm install
 npm run dev
+
+При необходимости включить: Службы -> MySQL
 ```
 
 ## CSS:

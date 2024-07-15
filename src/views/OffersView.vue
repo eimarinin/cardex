@@ -1,6 +1,7 @@
+<script setup>
+    import Offers from '../components/Offers.vue'
+</script>
+
 <template>
-    <div>
-        <h1>Offers Page</h1>
-        <router-link to="/">Back to Home</router-link>
-    </div>
+    <Offers />
 </template>

@@ -1,18 +1,26 @@
-const mysql = require('mysql');
+import mysql from 'mysql';
 
-const db = mysql.createConnection({
+// Создание подключения к базе данных
+const connection = mysql.createConnection({
     host: 'localhost',
     user: 'cardex',
     password: 'Cardex_2024',
     database: 'cardex'
 });
 
-db.connect((err) => {
+// Подключение к базе данных
+connection.connect((err) => {
     if (err) {
-        console.error('Error connecting to the database:', err);
+        console.error('Error connecting to database:', err);
         return;
     }
-    console.log('Connected to the MySQL database');
+    console.log('Connected to database');
 });
 
-module.exports = db;
+// Функция для выполнения SQL запросов
+export const query = (sql, params, callback) => {
+    return connection.query(sql, params, callback);
+};
+
+// Экспорт объекта подключения (необязательно)
+export default connection;
